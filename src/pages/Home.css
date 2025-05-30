@@ -1,0 +1,32 @@
+.home-container {
+  background: url('https://images.unsplash.com/photo-1607950133684-c6f14d2b4d89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+}
+
+.welcome-text {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 100px;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.category-card {
+  display: block;
+  padding: 60px 20px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.category-card:hover {
+  transform: scale(1.05);
+}
+
+.cheap { background-color: #28a745; }
+.medium { background-color: #ffc107; }
+.expensive { background-color: #dc3545; }
