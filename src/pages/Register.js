@@ -8,7 +8,7 @@ function Register() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_API_URL}/api/register`, { username, password })
+    axios.post(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/register`, { username, password })
       .then(res => {
         setMessage(res.data.message);
         localStorage.setItem('user', username);
@@ -35,5 +35,4 @@ function Register() {
     </div>
   );
 }
-
 export default Register;

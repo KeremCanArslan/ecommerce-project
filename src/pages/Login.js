@@ -8,7 +8,7 @@ function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    axios.post(`${process.env.REACT_APP_API_URL}/api/login`, { username, password })
+    axios.post(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/login`, { username, password })
       .then(res => {
         setMessage(res.data.message);
         localStorage.setItem('user', res.data.user);
@@ -35,5 +35,4 @@ function Login() {
     </div>
   );
 }
-
 export default Login;

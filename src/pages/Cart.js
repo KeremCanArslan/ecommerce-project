@@ -8,7 +8,7 @@ function Cart() {
 
   const fetchCart = useCallback(() => {
     if (!user) return;
-    axios.get(`${process.env.REACT_APP_API_URL}/api/cart?user=${user}`)
+    axios.get(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/cart?user=${user}`)
       .then(res => setCartItems(res.data))
       .catch(err => console.error(err));
   }, [user]);
@@ -22,7 +22,7 @@ function Cart() {
   }, [fetchCart, user]);
 
   const removeFromCart = (productId) => {
-    axios.delete(`${process.env.REACT_APP_API_URL}/api/cart?user=${user}`, { data: { product_id: productId } })
+    axios.delete(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/cart?user=${user}`, { data: { product_id: productId } })
       .then(() => fetchCart())
       .catch(err => console.error(err));
   };
@@ -55,5 +55,4 @@ function Cart() {
     </div>
   );
 }
-
 export default Cart;

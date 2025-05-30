@@ -9,7 +9,7 @@ function Products() {
   const user = localStorage.getItem('user');
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/api/products/${category}`)
+    axios.get(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/products/${category}`)
       .then(res => setProducts(res.data))
       .catch(err => console.error(err));
   }, [category]);
@@ -19,7 +19,7 @@ function Products() {
       alert("Please login to add items to cart.");
       return;
     }
-    axios.post(`${process.env.REACT_APP_API_URL}/api/cart?user=${user}`, { product_id: productId })
+    axios.post(`https://epiano-backend-a3ckfadbhjccg3av.westeurope-01.azurewebsites.net/api/cart?user=${user}`, { product_id: productId })
       .then(res => alert(res.data.message))
       .catch(err => alert("Error adding to cart"));
   };
@@ -46,5 +46,4 @@ function Products() {
     </div>
   );
 }
-
 export default Products;
